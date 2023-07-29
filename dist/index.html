@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Daily Task Reminder</title>
+  <link rel="stylesheet" href="index.css">
+  <audio id="audio_player" loop>
+    <source src="./music/uninteresting_remind.mp3" type="audio/mpeg">
+  </audio>
+</head>
+<body>
+  <div class="main">
+    <!-- Left Side -->
+    <div id="sidebar" class="overlay">
+      <div class="overlay-content">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="to_do_task">ToDo List</div>
+        <div id="task_container">
+          <!-- <div id="task"></div> -->
+        </div>
+        <div id="new_task" onclick="add_task()">New Task</div>
+      </div>
+    </div>
+  <!-- Right Side -->
+    <div id="content">
+      <span style="font-size:27px;cursor:pointer" onclick="openNav()">&#9776; &nbsp; MY TO DO LIST</span>
+
+      <!-- Right top menu -->
+      <div id="menu">
+        <div id="menu_left">Task Title</div>
+        <div id="menu_right">
+          <div id="refresh" onclick="refresh()">Refresh</div>
+          <div id="delete" onclick="delete_task()">Delete</div>
+        </div>
+      </div>
+      <!-- Main body -->
+      <div id="main_content">
+        <div id="content_menu">
+          <input type="text" id="task_name" oninput="get_task_name()" placeholder="Enter Task Title" />
+          <div id="add_task_list" onclick="add_task_list()">+ Add List</div>
+        </div>
+
+        <div id="inner_main_content">
+          <div id="task_list_container"></div>
+          <div id="schedule_time">
+            <div>
+              <input type="date" name="date" id="date">
+              <input type="time" name="time" id="time">
+            </div>
+            <div class="start_reset_div">
+              <button onclick="show_date_time()" id="start_reminder">Set Reminder</button>
+              <button type="reset" id="reset">Reset Reminder</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+  <script type="text/javascript" src="index.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("sidebar").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("sidebar").style.width = "0%";
+    }
+  </script>
+</body>
+</html>

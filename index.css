@@ -1,0 +1,295 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.main{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 20px; */
+}
+
+/* Left side */
+.overlay {
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 10;
+  background-color: gray;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+/* .overlay-content {
+  position: relative;
+  top: 25%;
+  width: 20%;
+  text-align: center;
+  margin-top: 30px;
+} */
+
+.overlay div {
+  width: 170px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.overlay .closebtn {
+  /* position: absolute; */
+  top: 0px;
+  margin-left: 150px;
+  color: #000;
+  text-decoration: none ;
+  font-size: 40px;
+}
+
+/* #sidebar{
+  width: 100%;
+  background-color: #696D7D;
+  padding: 20px;
+} */
+
+#sidebar #to_do_task{
+  border-bottom: 2px solid #000;
+  margin-bottom: 30px;
+  text-align: left;
+  font-size: 25px;
+}
+
+#task_container{
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.task{
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+#new_task{
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  width: 80px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+#new_task:hover{
+  background-color: #bebdbd;
+}
+
+.active{
+  font-weight: bold;
+}
+
+/* Right Side */
+#content{
+  width: 450%;
+  background-color: #bebdbd;
+
+}
+/* Menu */
+#menu{
+  width: auto;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 25px;
+}
+
+#menu_right{
+  display: flex;
+  justify-content: space-between;
+}
+
+#refresh{
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+#delete{
+  cursor: pointer;
+}
+/* Main content */
+#main_content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#content_menu{
+  display: flex; 
+  justify-content: space-between;
+  font-size: 22px;
+  width: 600px;
+}
+
+#main_content input{
+  border: none;
+  font-size: 19px;
+  background-color: transparent;
+}
+
+#main_content input::placeholder{
+  color: #000;
+}
+
+#main_content input:focus{
+  outline:none;
+}
+
+#add_task_list{
+  border: 1px solid #000;
+  /* height: 20px; */
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#add_task_list:hover{
+  background-color: #696D7D;
+}
+
+#inner_main_content{
+  display: flex;
+  width: 600px;
+  max-width: 600px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#task_list_container{
+  margin-top: 20px;
+}
+
+#task_list{
+  margin-bottom: 10px;
+}
+
+#task_list_checkbox{
+  width: 20px;
+  height: 20px;
+}
+
+#date, #time, #reset {
+  display: none;
+  border: 1px solid black !important;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+#reset{
+  margin-left: 20px;
+}
+
+#reset:hover{
+  background-color: #696D7D;
+}
+
+#start_reminder{
+  cursor: pointer;
+}
+
+#start_reminder:hover{
+  background-color: #696D7D;
+}
+
+.start_reset_div{
+  margin-top: 10px;
+}
+
+#schedule_time{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+#schedule_time button{
+  border-radius: 5px;
+  padding: 5px;
+  background: transparent;
+  font-size: 16px;
+}
+
+
+/* Make the sidebar responsive for mobile and tablet */
+/* Your existing CSS styles */
+
+/* Make the sidebar responsive for mobile and tablet */
+
+@media screen and (max-width: 968px) {
+
+  #content{
+    padding-left: 15px;
+  }
+
+  #menu{
+    width: 280px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+  }
+
+  #menu_left{
+    margin-left: -18px;
+  }
+
+  #menu_right{
+    margin-right: -40px;
+  }
+
+  #refresh{
+    padding-right: 10px;
+
+  }
+
+  #main_content{
+    align-items:flex-start;
+    width: auto;
+  }
+
+  #content_menu{
+    display: flex; 
+    justify-content: flex-start;
+    font-size: 22px;
+    /* width: 0px; */
+  }
+
+  #add_task_list{
+    margin-left: -12px;
+  }
+
+  #inner_main_content{
+    flex-direction: column;
+    width: 350px;
+    align-items: flex-start;
+  }
+}
+
+/* @media screen and (min-width: 768px) and (max-width: 810px) {
+  #menu{
+    width: 580px;
+  }
+
+  #menu_right{
+    margin-right: 2000px;
+  }
+} */
+/* @media screen and (max-height: 450px) {
+    .overlay div {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+
+} */
